@@ -127,6 +127,10 @@ import { continueCode, continueCodeFindIt, continueCodeFixIt } from './routes/co
 import { ensureFileIsPassed, handleZipFileUpload, checkUploadSize, checkFileType, handleXmlUpload, handleYamlUpload } from './routes/fileUpload'
 
 const app = express()
+app.get('/aikido.txt', (_req, res) => {
+  res.type('text/plain')
+  res.send('validation.aikido.42ff9edbbbb294d3fd9bd89c551cdb6c')
+})
 const server = new http.Server(app)
 
 // errorhandler requires us from overwriting a string property on it's module which is a big no-no with esmodules :/
